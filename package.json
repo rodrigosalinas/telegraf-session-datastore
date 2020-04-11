@@ -1,7 +1,7 @@
 {
-  "name": "telegraf-session-firebase",
+  "name": "telegraf-session-datastore",
   "version": "0.1.0",
-  "description": "Firebase powered session middleware for Telegraf",
+  "description": "Cloud Datastore powered session middleware for Telegraf",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,16 +12,16 @@
     "telegraf",
     "session",
     "middleware",
-    "firebase"
+    "datastore"
   ],
-  "author": "Vitaly Domnikov <dotcypress@gmail.com>",
+  "author": "Rodrigo Salinas <rodrigo.salinas@vipass.cl>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/telegraf/telegraf-session-firebase/issues"
   },
   "homepage": "https://github.com/telegraf/telegraf-session-firebase#readme",
   "engines": {
-    "node": ">=6.2.1"
+    "node": ">=13.2.0"
   },
   "files": [
     "index.js"

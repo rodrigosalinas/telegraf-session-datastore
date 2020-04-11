@@ -2,14 +2,14 @@
 [![NPM Version](https://img.shields.io/npm/v/telegraf-session-firebase.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-session-firebase)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
-# Firebase session for Telegraf
+# Datastore session for Telegraf
 
-[Firebase](https://firebase.google.com/docs/admin/setup) powered session middleware for [Telegraf](https://github.com/telegraf/telegraf).
+[Datastore](https://firebase.google.com/docs/admin/setup) powered session middleware for [Telegraf](https://github.com/telegraf/telegraf).
 
 ## Installation
 
 ```js
-$ npm install telegraf-session-firebase
+$ npm install telegraf-session-datastore
 ```
 
 ## Example

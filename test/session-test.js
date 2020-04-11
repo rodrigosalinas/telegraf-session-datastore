@@ -1,2 +1,2 @@
 const test = require('ava')
-test('telegraf-session-firebase', t => t.pass())
+test('telegraf-session-datastore', t => t.pass())
