@@ -4,7 +4,7 @@
 
 # Datastore session for Telegraf (Under dev. Don't use it yet)
 
-[Datastore](https://firebase.google.com/docs/admin/setup) powered session middleware for [Telegraf](https://github.com/telegraf/telegraf).
+[Datastore](https://cloud.google.com/datastore) powered session middleware for [Telegraf](https://github.com/telegraf/telegraf).
 
 ## Installation
 
