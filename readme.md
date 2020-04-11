@@ -2,7 +2,7 @@
 [![NPM Version](https://img.shields.io/npm/v/telegraf-session-firebase.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-session-firebase)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
-# Datastore session for Telegraf
+# Datastore session for Telegraf (Under dev. Don't use it yet)
 
 [Datastore](https://firebase.google.com/docs/admin/setup) powered session middleware for [Telegraf](https://github.com/telegraf/telegraf).
 
