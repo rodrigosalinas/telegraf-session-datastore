@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/travis/rodrigosalinas/telegraf-session-datastore.svg?branch=master&style=flat-square)](https://travis-ci.org/rodrigosalinas/telegraf-session-datastore)
+[![Build Status](https://travis-ci.com/rodrigosalinas/telegraf-session-datastore.svg?branch=master)](https://travis-ci.com/github/rodrigosalinas/telegraf-session-datastore)
 [![NPM Version](https://img.shields.io/npm/v/telegraf-session-datastore.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-session-datastore)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
