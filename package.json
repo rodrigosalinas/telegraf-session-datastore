@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/telegraf/telegraf-session-firebase.git"
+    "url": "git+ssh://git@github.com/rodrigosalinas/telegraf-session-datastore.git"
   },
   "keywords": [
     "telegram",
@@ -14,12 +14,12 @@
     "middleware",
     "datastore"
   ],
-  "author": "Rodrigo Salinas <rodrigo.salinas@vipass.cl>",
+  "author": "Rodrigo Salinas <rodrigo.salinas@kotka.cl>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/telegraf/telegraf-session-firebase/issues"
+    "url": "https://github.com/rodrigosalinas/telegraf-session-datastore/issues"
   },
-  "homepage": "https://github.com/telegraf/telegraf-session-firebase#readme",
+  "homepage": "https://github.com/rodrigosalinas/telegraf-session-datastore#readme",
   "engines": {
     "node": ">=13.2.0"
   },
