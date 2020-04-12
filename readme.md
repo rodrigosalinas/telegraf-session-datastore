@@ -26,7 +26,7 @@ const db = new Datastore({
     keyFilename: process.env.KEY_FILENAME
 })
 
-//You just have to create an Entity in your Datastore called BotSessions with two properties: 'key' (type string) and 'sessionValues' (type text)
+//You just have to create an Entity in your Datastore called BotSession with two properties: 'key' (type string) and 'sessionValues' (type text)
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.use(datastoreSession(db))
