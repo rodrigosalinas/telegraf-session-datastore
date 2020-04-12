@@ -9,7 +9,9 @@
 ## Installation
 
 ```js
+
 $ npm install telegraf-session-datastore
+
 ```
 
 ## Example
