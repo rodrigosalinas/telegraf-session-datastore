@@ -1,5 +1,5 @@
-[![Build Status](https://img.shields.io/travis/telegraf/telegraf-session-firebase.svg?branch=master&style=flat-square)](https://travis-ci.org/telegraf/telegraf-session-firebase)
-[![NPM Version](https://img.shields.io/npm/v/telegraf-session-firebase.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-session-firebase)
+[![Build Status](https://img.shields.io/travis/rodrigosalinas/telegraf-session-datastore.svg?branch=master&style=flat-square)](https://travis-ci.org/rodrigosalinas/telegraf-session-datastore)
+[![NPM Version](https://img.shields.io/npm/v/telegraf-session-datastore.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-session-datastore)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
 # Datastore session for Telegraf (Under dev. Don't use it yet)
@@ -16,18 +16,18 @@ $ npm install telegraf-session-datastore
 
 ```js
 const Telegraf = require('telegraf')
-const firebaseSession = require('telegraf-session-firebase')
-const admin = require('firebase-admin')
+const datastoreSession = require('telegraf-session-datastore')
+const { Datastore } = require('@google-cloud/datastore')
 
-const serviceAccount = require('path/to/serviceAccountKey.json')
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+const db = new Datastore({
+    projectId:   process.env.PROJECT_ID,
+    keyFilename: process.env.KEY_FILENAME
 })
-const database = admin.database()
+
+//You just have to create an Entity in your Datastore called BotSessions with two properties: 'key' (type string) and 'sessionValues' (type text)
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.use(firebaseSession(database.ref('sessions')))
+bot.use(datastoreSession(db))
 bot.on('text', (ctx, next) => {
   ctx.session.counter = ctx.session.counter || 0
   ctx.session.counter++
