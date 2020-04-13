@@ -36,12 +36,14 @@ module.exports = (db, opts) => {
                             data: [
                                 {
                                     name: 'key',
-                                    value: key
+                                    value: key,
+                                    type: 'string'
                                 },
                                 {
                                     name: 'sessionValues',
                                     value: JSON.stringify(sessionValues),
-                                    excludeFromIndexes: true
+                                    excludeFromIndexes: true,
+                                    type: 'text'
                                 }
                             ]
                         }
