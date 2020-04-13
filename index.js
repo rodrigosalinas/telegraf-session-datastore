@@ -33,10 +33,17 @@ module.exports = (db, opts) => {
                     if (sessionValues && Object.keys(sessionValues).length > 0) {
                         session = {
                             key: db.key('BotSession'),
-                            data: {
-                                key: key,
-                                sessionValues: JSON.stringify(sessionValues)
-                            }
+                            data: [
+                                {
+                                    name: 'key',
+                                    value: key
+                                },
+                                {
+                                    name: 'sessionValues',
+                                    value: JSON.stringify(sessionValues),
+                                    excludeFromIndexes: true
+                                }
+                            ]
                         }
                         await db.upsert(session)
                     }
