@@ -1,7 +1,14 @@
 module.exports = (db, opts) => {
     const options = Object.assign({
         property: 'session',
-        getSessionKey: (ctx) => ctx.from && ctx.chat && `${ctx.from.id}/${ctx.chat.id}`
+        getSessionKey: (ctx) => {
+            if (ctx.from && ctx.chat) {
+                return `${ctx.from.id}/${ctx.chat.id}`
+            } else if (ctx.from && ctx.inlineQuery) {
+                return `${ctx.from.id}/${ctx.from.id}`
+            }
+            return null
+        }
     }, opts)
 
     function getSession(key) {
