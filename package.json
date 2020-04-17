@@ -1,6 +1,6 @@
 {
   "name": "telegraf-session-datastore",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Cloud Datastore powered session middleware for Telegraf",
   "main": "index.js",
   "repository": {
