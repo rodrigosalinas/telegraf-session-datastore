@@ -34,7 +34,6 @@ module.exports = (db, opts) => {
                 if ((!sessionValues || Object.keys(sessionValues).length === 0) && session) {
                     await db.delete(db.key(['BotSession', parseInt(session[db.KEY].id)]))
                 } else if (session) {
-                    session.excludeFromIndexes = ['sessionValues']
                     session.sessionValues = JSON.stringify(sessionValues)
                     await db.update(session)
                 } else {
