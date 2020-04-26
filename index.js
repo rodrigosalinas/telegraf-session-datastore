@@ -1,3 +1,5 @@
+let botSessionEntityName = 'BotSession'
+
 module.exports = (db, opts) => {
     const options = Object.assign({
         property: 'session',
@@ -10,6 +12,8 @@ module.exports = (db, opts) => {
             return null
         }
     }, opts)
+
+    if (options.botSessionEntityName) botSessionEntityName = options.botSessionEntityName
 
     function getSession(key) {
         return new Promise(async(resolve, reject) => {
@@ -32,14 +36,14 @@ module.exports = (db, opts) => {
             try {
                 let session = await getBotSessionByKey(db, key)
                 if ((!sessionValues || Object.keys(sessionValues).length === 0) && session) {
-                    await db.delete(db.key(['BotSession', parseInt(session[db.KEY].id)]))
+                    await db.delete(db.key([botSessionEntityName, parseInt(session[db.KEY].id)]))
                 } else if (session) {
                     session.sessionValues = JSON.stringify(sessionValues)
                     await db.update(session)
                 } else {
                     if (sessionValues && Object.keys(sessionValues).length > 0) {
                         session = {
-                            key: db.key('BotSession'),
+                            key: db.key(botSessionEntityName),
                             data: [
                                 {
                                     name: 'key',
@@ -84,7 +88,7 @@ module.exports = (db, opts) => {
 function getBotSessionByKey(db, key) {
     return new Promise(async(resolve, reject) => {
         try {
-            const query    = await db.createQuery('BotSession').filter('key', '=', key)
+            const query    = await db.createQuery(botSessionEntityName).filter('key', '=', key)
             let [sessions] = await db.runQuery(query)
             if (sessions.length > 0) {
                 resolve(sessions[0])
