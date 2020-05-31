@@ -20,7 +20,7 @@ module.exports = (db, opts) => {
             try {
                 let session = await getBotSessionByKey(db, key)
                 if (session) {
-                    resolve(JSON.parse(session.sessionValues))
+                    resolve(session.sessionValues)
                 } else {
                     resolve(undefined)
                 }
@@ -38,7 +38,7 @@ module.exports = (db, opts) => {
                 if ((!sessionValues || Object.keys(sessionValues).length === 0) && session) {
                     await db.delete(db.key([botSessionEntityName, parseInt(session[db.KEY].id)]))
                 } else if (session) {
-                    session.sessionValues = JSON.stringify(sessionValues)
+                    session.sessionValues = sessionValues
                     await db.update(session)
                 } else {
                     if (sessionValues && Object.keys(sessionValues).length > 0) {
@@ -52,9 +52,7 @@ module.exports = (db, opts) => {
                                 },
                                 {
                                     name: 'sessionValues',
-                                    value: JSON.stringify(sessionValues),
-                                    excludeFromIndexes: true,
-                                    type: 'text'
+                                    value: sessionValues
                                 }
                             ]
                         }
